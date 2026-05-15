@@ -135,7 +135,7 @@ export default function Busqueda() {
             <div className={styles.resultEyebrow}>Casilla</div>
             <h2 className={styles.claveBig}>{estado.clave}</h2>
             <p className={styles.resumen}>
-              {estado.eventos.length} de 4 eventos registrados en la bitácora
+              {Math.min(estado.eventos.length, 4)} de 4 eventos registrados en la bitácora
             </p>
           </div>
           <div className={styles.resultStatus}>
