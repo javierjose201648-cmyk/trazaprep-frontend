@@ -21,7 +21,6 @@ export default function Inicio() {
   const [filtro, setFiltro] = useState<Filtro>("todas");
   const [loading, setLoading] = useState(true);
 
-  // Carga inicial
   useEffect(() => {
     let cancelled = false;
     Promise.all([obtenerStats(), obtenerResumenCasillas()])
@@ -40,13 +39,11 @@ export default function Inicio() {
     };
   }, []);
 
-  // Aplica filtro
   const filtradas = useMemo(() => {
     if (filtro === "todas") return resumen;
     return resumen.filter((c) => c.estado === filtro);
   }, [resumen, filtro]);
 
-  // Cobertura calculada
   const cobertura = useMemo(() => {
     if (resumen.length === 0) return 0;
     const completas = resumen.filter((c) => c.estado === "completa").length;
@@ -61,7 +58,6 @@ export default function Inicio() {
     <>
       <EditionStrip />
 
-      {/* ── Editorial intro ──────────────────────────── */}
       <section className={styles.intro}>
         <h1 className={styles.headline}>
           Cada acta deja una huella <em>inalterable</em>.
@@ -75,18 +71,11 @@ export default function Inicio() {
         </p>
       </section>
 
-      {/* ── Stats ───────────────────────────────────── */}
       <section className={styles.stats}>
         <Stat
           label="Casillas en la red"
           value={stats?.totalCasillas ?? "—"}
           sub="Registradas en la jornada actual"
-          loading={loading}
-        />
-        <Stat
-          label="Eventos registrados"
-          value={stats?.totalEventos ?? "—"}
-          sub="Captura · Transmisión · Validación · Publicación"
           loading={loading}
         />
         <Stat
@@ -98,7 +87,6 @@ export default function Inicio() {
         />
       </section>
 
-      {/* ── Banda de metadatos técnicos ─────────────── */}
       <div className={styles.metaBand}>
         <span>
           <strong>Red</strong> · {stats?.network ?? "—"}
@@ -112,7 +100,6 @@ export default function Inicio() {
         </span>
       </div>
 
-      {/* ── Sección · casillas ──────────────────────── */}
       <div className={styles.sectionHead}>
         <h2 className={styles.sectionTitle}>Casillas registradas</h2>
         <div className={styles.filter} role="tablist" aria-label="Filtrar casillas">
@@ -140,7 +127,6 @@ export default function Inicio() {
         </div>
       </div>
 
-      {/* ── Tabla ───────────────────────────────────── */}
       <table className={styles.casillas}>
         <thead>
           <tr>
