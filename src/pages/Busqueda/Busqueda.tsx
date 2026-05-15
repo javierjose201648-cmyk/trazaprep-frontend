@@ -6,7 +6,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Signature from "../../components/Signature/Signature";
 import StatusPill from "../../components/StatusPill/StatusPill";
 import Timeline from "../../components/Timeline/Timeline";
-import { obtenerBitacora } from "../../services/mock";
+import { obtenerBitacora } from "../../services/api";
 import type { EstadoCasilla, Evento } from "../../types";
 import styles from "./Busqueda.module.css";
 

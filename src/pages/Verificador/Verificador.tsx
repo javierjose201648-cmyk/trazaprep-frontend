@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import EditionStrip from "../../components/EditionStrip/EditionStrip";
 import Footnote from "../../components/Footnote/Footnote";
 import Signature from "../../components/Signature/Signature";
-import { verificarHash } from "../../services/mock";
+import { verificarHash } from "../../services/api";
 import type { ResultadoVerificacion } from "../../types";
 import { fechaLarga } from "../../utils/format";
 import styles from "./Verificador.module.css";

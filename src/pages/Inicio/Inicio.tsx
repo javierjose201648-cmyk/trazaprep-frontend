@@ -7,7 +7,7 @@ import StatusPill from "../../components/StatusPill/StatusPill";
 import {
   obtenerResumenCasillas,
   obtenerStats,
-} from "../../services/mock";
+} from "../../services/api";
 import type { CasillaResumen, Stats } from "../../types";
 import { acortarDireccion, tiempoRelativo } from "../../utils/format";
 import styles from "./Inicio.module.css";
