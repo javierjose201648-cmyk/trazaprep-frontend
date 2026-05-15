@@ -1,3 +1,5 @@
+/* ── Editorial intro ────────────────────────────────────────── */
+
 .intro {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
@@ -32,55 +34,443 @@
   align-self: end;
 }
 
-.mono {
-  font-family: var(--font-mono);
-  font-size: 0.92em;
-  background: var(--paper-2);
-  padding: 2px 6px;
-  border-radius: 2px;
+/* ── Formulario ─────────────────────────────────────────────── */
+
+.formulario {
+  padding: 48px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.placeholder {
-  margin: 64px 0;
-  padding: 48px;
-  border: 1px dashed var(--rule-2);
-  text-align: center;
-  background: rgba(245, 241, 232, 0.5);
+/* ── Campo clave ────────────────────────────────────────────── */
+
+.campoGrupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.placeholderTag {
-  display: inline-block;
+.campoLabel {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: var(--fs-eyebrow);
   letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-bg);
-  padding: 4px 10px;
-  border-radius: 2px;
-  margin-bottom: 16px;
+  color: var(--muted);
 }
 
-.placeholder p {
+.campoFila {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 12px;
+}
+
+.flecha {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--muted-2);
+  user-select: none;
+}
+
+.claveInput {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  outline: none;
+  caret-color: var(--accent);
+}
+
+.claveInput::placeholder {
+  color: var(--muted-2);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.claveInput:disabled {
+  opacity: 0.5;
+}
+
+/* ── Zona drag-and-drop ─────────────────────────────────────── */
+
+.zona {
+  border: 1px dashed var(--rule-2);
+  padding: 48px 32px;
+  cursor: pointer;
+  transition: border-color var(--t-base), background var(--t-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+
+.zona:hover:not(.zonaCompleta) {
+  border-color: var(--rule-strong);
+  background: var(--paper-2);
+}
+
+.zonaActiva {
+  border: 1px solid var(--accent) !important;
+  background: var(--accent-bg) !important;
+  cursor: copy;
+}
+
+.zonaCompleta {
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  cursor: default;
+}
+
+/* permite cambiar archivo desde zona completa */
+.zonaCompleta:hover {
+  border-color: var(--rule-2);
+}
+
+.inputOculto {
+  display: none;
+}
+
+.zonaTexto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.zonaTextoFila {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.zonaInstruccion {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: var(--fs-lead);
   color: var(--ink-2);
-  max-width: 540px;
-  margin: 0 auto;
 }
+
+.zonaSecundario {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ── Archivo cargado ────────────────────────────────────────── */
+
+.archivoCargado {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  pointer-events: none;
+}
+
+.archivoNombre {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  word-break: break-all;
+}
+
+.archivoTamano {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.archivoAccion {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ── Hash calculado ─────────────────────────────────────────── */
+
+.hashBloque {
+  border: 1px solid var(--rule);
+  padding: 20px 24px;
+  background: var(--paper-2);
+}
+
+.hashEyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.hashFila {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hashValor {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  word-break: break-all;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.copiarBtn {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 0;
+  white-space: nowrap;
+  transition: opacity var(--t-fast);
+  flex-shrink: 0;
+}
+
+.copiarBtn:hover {
+  opacity: 0.65;
+}
+
+/* ── Acción ─────────────────────────────────────────────────── */
+
+.accion {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.verificarBtn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  border: none;
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: opacity var(--t-fast);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.verificarBtn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.verificarBtn:not(:disabled):hover {
+  opacity: 0.82;
+}
+
+.avisoFila {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ── Loading dot (compartido) ───────────────────────────────── */
+
+.loadingDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 1.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.3; transform: scale(0.85); }
+}
+
+/* ── Resultado ──────────────────────────────────────────────── */
+
+.resultadoCoincide,
+.resultadoNoCoincide {
+  border: 1px solid;
+  padding: 36px 40px;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.resultadoCoincide {
+  background: var(--ok-bg);
+  border-color: var(--ok-border);
+}
+
+.resultadoNoCoincide {
+  background: var(--err-bg);
+  border-color: var(--err-border);
+}
+
+.resultadoEncabezado {
+  flex: 1;
+}
+
+.resultadoEyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.resultadoMensaje {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 14;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.resultadoTimestamp {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ── Error ──────────────────────────────────────────────────── */
+
+.errorBloque {
+  border: 1px solid var(--err-border);
+  background: var(--err-bg);
+  padding: 24px 28px;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.errorLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--err);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.errorMensaje {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-2);
+  flex: 1;
+  margin: 0;
+}
+
+/* ── Reiniciar ──────────────────────────────────────────────── */
+
+.reiniciarBtn {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+  align-self: flex-start;
+  transition: opacity var(--t-fast);
+}
+
+.reiniciarBtn:hover {
+  opacity: 0.65;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
 
 @media (max-width: 860px) {
   .intro {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
     padding: 36px 0 32px;
   }
+
   .headline {
     font-size: 40px;
   }
-  .placeholder {
-    padding: 32px 24px;
-    margin: 40px 0;
+
+  .formulario {
+    padding: 36px 0;
+    gap: 24px;
+  }
+
+  .zona {
+    padding: 36px 24px;
+    min-height: 120px;
+  }
+
+  .hashBloque {
+    padding: 16px 20px;
+  }
+
+  .accion {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .resultadoCoincide,
+  .resultadoNoCoincide {
+    padding: 24px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .errorBloque {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headline {
+    font-size: 32px;
+  }
+
+  .claveInput {
+    font-size: 18px;
+  }
+
+  .hashValor {
+    font-size: 11px;
   }
 }
