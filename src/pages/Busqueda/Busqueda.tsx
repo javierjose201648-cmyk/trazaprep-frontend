@@ -5,7 +5,6 @@ import Footnote from "../../components/Footnote/Footnote";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Signature from "../../components/Signature/Signature";
 import StatusPill from "../../components/StatusPill/StatusPill";
-import Timeline from "../../components/Timeline/Timeline";
 import { obtenerBitacora } from "../../services/api";
 import type { EstadoCasilla, Evento } from "../../types";
 import styles from "./Busqueda.module.css";
@@ -39,7 +38,6 @@ export default function Busqueda() {
       ultimaBusqueda.current = clave;
       setEstado({ kind: "loading", clave });
 
-      // Sincroniza URL para que la búsqueda sea compartible.
       if (searchParams.get("clave") !== clave) {
         setSearchParams({ clave }, { replace: true });
       }
@@ -62,7 +60,6 @@ export default function Busqueda() {
     [searchParams, setSearchParams],
   );
 
-  // Autoejecutar cuando llega ?clave=... vía URL.
   useEffect(() => {
     if (claveURL && claveURL !== ultimaBusqueda.current) {
       buscar(claveURL);
@@ -133,22 +130,18 @@ export default function Busqueda() {
       )}
 
       {estado.kind === "found" && statusCasilla && (
-        <>
-          <header className={styles.resultHeader}>
-            <div className={styles.resultInfo}>
-              <div className={styles.resultEyebrow}>Casilla</div>
-              <h2 className={styles.claveBig}>{estado.clave}</h2>
-              <p className={styles.resumen}>
-                {estado.eventos.length} de 4 eventos registrados en la bitácora
-              </p>
-            </div>
-            <div className={styles.resultStatus}>
-              <StatusPill estado={statusCasilla} />
-            </div>
-          </header>
-
-          <Timeline eventos={estado.eventos} />
-        </>
+        <header className={styles.resultHeader}>
+          <div className={styles.resultInfo}>
+            <div className={styles.resultEyebrow}>Casilla</div>
+            <h2 className={styles.claveBig}>{estado.clave}</h2>
+            <p className={styles.resumen}>
+              {estado.eventos.length} de 4 eventos registrados en la bitácora
+            </p>
+          </div>
+          <div className={styles.resultStatus}>
+            <StatusPill estado={statusCasilla} />
+          </div>
+        </header>
       )}
 
       <Footnote>
