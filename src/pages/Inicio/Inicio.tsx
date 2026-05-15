@@ -169,9 +169,9 @@ export default function Inicio() {
                 </td>
                 <td>
                   <span className={styles.eventosCount}>
-                    {c.eventosCount}{" "}
-                    <span className={styles.eventosTotal}>/ 4</span>
-                  </span>
+  {Math.min(c.eventosCount, 4)}{" "}
+  <span className={styles.eventosTotal}>/ 4</span>
+</span>
                 </td>
                 <td className={styles.ultimaActualizacion}>
                   {c.ultimoTimestamp != null
