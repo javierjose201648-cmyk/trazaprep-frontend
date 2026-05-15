@@ -12,7 +12,7 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 
 const client = axios.create({
   baseURL: BASE_URL,
-  timeout: 10_000,
+  timeout: 30_000,
 });
 
 export const obtenerBitacora = async (clave: string): Promise<Evento[]> => {
