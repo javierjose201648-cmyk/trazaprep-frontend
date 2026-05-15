@@ -1,0 +1,28 @@
+.footnote {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.marker {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--accent);
+  line-height: 1;
+  padding-top: 2px;
+}
+
+.footnote p {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 14;
+  font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 760px;
+}

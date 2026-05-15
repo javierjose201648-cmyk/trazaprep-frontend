@@ -1,0 +1,80 @@
+/* ─────────────────────────────────────────────────────────────
+   TrazaPREP · Design tokens
+   Cívico contemporáneo — papel, tinta cálida, sienna mexicana
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Color · superficies ───────────────────────────── */
+  --paper:        #F5F1E8;   /* fondo principal — papel cálido */
+  --paper-2:      #EDE7D8;   /* hover de filas, surfaces sutiles */
+  --paper-3:      #E5DCC6;   /* énfasis cálido */
+
+  /* ── Color · tinta y texto ─────────────────────────── */
+  --ink:          #1A1815;   /* tinta principal (no negro puro) */
+  --ink-2:        #3A352E;   /* texto secundario fuerte */
+  --muted:        #6E665C;   /* texto muted, labels */
+  --muted-2:      #94897B;   /* hints, separadores activos */
+
+  /* ── Color · reglas y bordes ───────────────────────── */
+  --rule:         #D8CFBC;
+  --rule-2:       #BFB39A;
+  --rule-strong:  var(--ink);
+
+  /* ── Color · acento (sienna mexicana) ──────────────── */
+  --accent:       #9E3B23;
+  --accent-soft:  #C56344;
+  --accent-bg:    #F2E1DA;
+
+  /* ── Color · estados (apagados, no candy) ──────────── */
+  --ok:           #4A6B47;
+  --ok-bg:        #E2E5D6;
+  --ok-border:    #C5CBA8;
+
+  --warn:         #A37528;
+  --warn-bg:      #F0E5C9;
+  --warn-border:  #DCCB9C;
+
+  --err:          #8B3A2F;
+  --err-bg:       #E9D6CE;
+  --err-border:   #D8B7A8;
+
+  /* ── Tipografía ────────────────────────────────────── */
+  --font-serif:   "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-sans:    "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:    "IBM Plex Mono", "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+  /* ── Tipografía · escala ───────────────────────────── */
+  --fs-eyebrow:   10.5px;   /* mono, uppercase, tracked */
+  --fs-meta:      12px;
+  --fs-body-sm:   13px;
+  --fs-body:      14.5px;
+  --fs-lead:      17px;
+  --fs-h3:        20px;
+  --fs-h2:        26px;
+  --fs-h1:        54px;
+  --fs-display:   72px;     /* stats grandes */
+
+  /* ── Tracking ──────────────────────────────────────── */
+  --track-eyebrow: 0.14em;
+  --track-meta:    0.08em;
+  --track-display: -0.025em;
+
+  /* ── Espaciado ─────────────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+
+  /* ── Layout ────────────────────────────────────────── */
+  --page-max:     1180px;
+  --page-pad-x:   56px;
+  --page-pad-x-sm: 24px;
+
+  /* ── Transiciones ──────────────────────────────────── */
+  --t-fast:  120ms ease;
+  --t-base:  180ms ease;
+}
