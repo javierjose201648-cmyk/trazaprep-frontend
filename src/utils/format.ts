@@ -55,3 +55,19 @@ export const timestampActual = (): string => {
   });
   return `${fecha}, ${hora}`;
 };
+/** Fecha precisa con segundos, ej. "15 may 2026 · 14:32:12". */
+export const fechaPrecisa = (unixSeconds: number): string => {
+  const d = new Date(unixSeconds * 1000);
+  const fecha = d.toLocaleDateString("es-MX", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+  const hora = d.toLocaleTimeString("es-MX", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  });
+  return `${fecha} · ${hora}`;
+};
