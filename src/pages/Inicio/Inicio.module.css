@@ -36,7 +36,7 @@
 /* ── Stats row ──────────────────────────────────── */
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0;
   padding: 40px 0;
   border-bottom: 1px solid var(--rule);
@@ -54,7 +54,7 @@
 
 .statLabel {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--muted);
@@ -184,7 +184,7 @@
 }
 
 .casillas tbody td {
-  padding: 16px 16px 16px 0;
+  padding: 20px 16px 20px 0;
   border-bottom: 1px solid var(--rule);
   vertical-align: middle;
 }
@@ -229,6 +229,7 @@
   color: var(--muted);
   font-style: italic;
   font-family: var(--font-serif);
+  font-size: var(--fs-lead);
   border-bottom: none !important;
 }
 

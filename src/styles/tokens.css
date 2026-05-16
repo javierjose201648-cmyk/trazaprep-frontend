@@ -44,13 +44,13 @@
   --font-mono:    "IBM Plex Mono", "JetBrains Mono", "SF Mono", Menlo, monospace;
 
   /* ── Tipografía · escala ───────────────────────────── */
-  --fs-eyebrow:   10.5px;   /* mono, uppercase, tracked */
-  --fs-meta:      12px;
-  --fs-body-sm:   13px;
-  --fs-body:      14.5px;
-  --fs-lead:      17px;
-  --fs-h3:        20px;
-  --fs-h2:        26px;
+  --fs-eyebrow:   11px;     /* mono, uppercase, tracked */
+  --fs-meta:      13px;
+  --fs-body-sm:   14px;
+  --fs-body:      16px;
+  --fs-lead:      19px;
+  --fs-h3:        22px;
+  --fs-h2:        28px;
   --fs-h1:        54px;
   --fs-display:   72px;     /* stats grandes */
 

@@ -85,10 +85,9 @@ export default function Busqueda() {
             Recorrido de un acta, <em>de la casilla al PREP</em>.
           </h1>
           <p className={styles.lead}>
-            Ingresa la clave de una casilla para ver su bitácora completa:
-            cuándo fue capturada, transmitida, validada y publicada. Cada paso
-            queda registrado con un sello de tiempo y la huella digital del
-            acta.
+            Ingresa la clave de una casilla para ver cuándo fue capturada,
+            transmitida, validada y publicada. Cada paso tiene su sello de
+            tiempo.
           </p>
         </section>
       )}
@@ -138,7 +137,7 @@ export default function Busqueda() {
               <div className={styles.resultEyebrow}>Casilla</div>
               <h2 className={styles.claveBig}>{estado.clave}</h2>
               <p className={styles.resumen}>
-                {Math.min(estado.eventos.length, 4)} de 4 eventos registrados en la bitácora
+                {Math.min(estado.eventos.length, 4)} de 4 pasos registrados
               </p>
             </div>
             <div className={styles.resultStatus}>
