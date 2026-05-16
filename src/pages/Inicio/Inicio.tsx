@@ -167,7 +167,7 @@ export default function Inicio() {
                 </td>
                 <td>
                   <span className={styles.eventosCount}>
-                    {c.eventosCount}{" "}
+                    {Math.min(c.eventosCount, 4)}{" "}
                     <span className={styles.eventosTotal}>/ 4</span>
                   </span>
                 </td>
