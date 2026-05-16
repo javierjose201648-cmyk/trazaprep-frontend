@@ -10,7 +10,7 @@ export default function Masthead() {
           <span className={styles.prep}>PREP</span>
         </NavLink>
         <p className={styles.tagline}>
-          Auditoría ciudadana del Programa de Resultados Electorales Preliminares
+          Auditoría ciudadana del PREP
         </p>
       </div>
       <nav className={styles.nav} aria-label="Navegación principal">

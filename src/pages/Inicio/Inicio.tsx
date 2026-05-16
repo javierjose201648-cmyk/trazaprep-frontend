@@ -67,11 +67,9 @@ export default function Inicio() {
           Cada acta deja una huella <em>inalterable</em>.
         </h1>
         <p className={styles.lead}>
-          Cuando un acta del PREP se captura en una casilla, su huella digital
-          queda registrada en una bitácora pública. Lo mismo ocurre al
-          transmitirla, validarla y publicarla. Aquí cualquier persona puede
-          consultar el recorrido completo de un acta y verificar que ningún paso
-          fue omitido ni alterado.
+          Cada acta del PREP deja una huella digital en una bitácora pública.
+          Aquí puedes consultar el recorrido completo de cualquier casilla y
+          verificar que ningún paso fue omitido.
         </p>
       </section>
 
@@ -81,12 +79,6 @@ export default function Inicio() {
           label="Casillas en la red"
           value={stats?.totalCasillas ?? "—"}
           sub="Registradas en la jornada actual"
-          loading={loading}
-        />
-        <Stat
-          label="Eventos registrados"
-          value={stats?.totalEventos ?? "—"}
-          sub="Captura · Transmisión · Validación · Publicación"
           loading={loading}
         />
         <Stat
@@ -146,8 +138,8 @@ export default function Inicio() {
           <tr>
             <th style={{ width: "28%" }}>Clave</th>
             <th style={{ width: "22%" }}>Estado</th>
-            <th style={{ width: "20%" }}>Eventos</th>
-            <th style={{ width: "30%" }}>Última actualización</th>
+            <th style={{ width: "20%" }}>Pasos</th>
+            <th style={{ width: "30%" }}>Actualización</th>
           </tr>
         </thead>
         <tbody>
@@ -183,7 +175,7 @@ export default function Inicio() {
                 </td>
                 <td>
                   <span className={styles.eventosCount}>
-                    {c.eventosCount}{" "}
+                    {Math.min(c.eventosCount, 4)}{" "}
                     <span className={styles.eventosTotal}>/ 4</span>
                   </span>
                 </td>
