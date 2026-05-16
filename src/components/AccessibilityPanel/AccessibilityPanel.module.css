@@ -1,0 +1,210 @@
+/* ── Contenedor flotante (bottom-right) ─────────────── */
+.container {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* ── Panel desplegable ───────────────────────────────── */
+.panel {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+  width: 320px;
+  overflow: hidden;
+  animation: slideUp 0.18s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-2);
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.close {
+  font-size: 22px;
+  color: var(--muted);
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color var(--t-fast), background var(--t-fast);
+}
+
+.close:hover {
+  color: var(--ink);
+  background: var(--paper-3);
+}
+
+/* ── Opciones ─────────────────────────────────────── */
+.options {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  text-align: left;
+  transition: background var(--t-fast);
+  width: 100%;
+}
+
+.option:hover {
+  background: var(--paper-2);
+}
+
+.optionActive {
+  background: var(--accent-bg);
+}
+
+.optionActive:hover {
+  background: var(--accent-bg);
+}
+
+.optionText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.optionLabel {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.optionDesc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ── Toggle switch ────────────────────────────────── */
+.toggle {
+  width: 44px;
+  height: 26px;
+  background: var(--rule-2);
+  border-radius: 99px;
+  position: relative;
+  flex-shrink: 0;
+  transition: background var(--t-base);
+}
+
+.toggleOn {
+  background: var(--accent);
+}
+
+.thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  transition: transform var(--t-base);
+}
+
+.toggleOn .thumb {
+  transform: translateX(18px);
+}
+
+/* ── Botón flotante (FAB) ─────────────────────────── */
+.fab {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+  position: relative;
+}
+
+.fab:hover {
+  background: var(--accent);
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+.fabOpen {
+  background: var(--accent);
+}
+
+.fabActive {
+  background: var(--accent);
+}
+
+.fabLabel {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Punto indicador de que hay opciones activas */
+.badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+}
+
+.fabActive .badge {
+  border-color: var(--accent-soft);
+  background: #fff;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 600px) {
+  .container {
+    bottom: 20px;
+    right: 16px;
+  }
+
+  .panel {
+    width: 290px;
+  }
+}

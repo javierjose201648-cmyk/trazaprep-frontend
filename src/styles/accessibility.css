@@ -1,0 +1,104 @@
+/* ─────────────────────────────────────────────────────────────
+   TrazaPREP · Modos de accesibilidad
+   Se activan agregando clases al elemento <html>
+   ───────────────────────────────────────────────────────────── */
+
+/* ── Texto grande ───────────────────────────────────────────── */
+/* Clase: a11y-text-lg */
+
+html.a11y-text-lg {
+  --fs-eyebrow:  14px;
+  --fs-meta:     17px;
+  --fs-body-sm:  19px;
+  --fs-body:     22px;
+  --fs-lead:     26px;
+  --fs-h3:       30px;
+  --fs-h2:       40px;
+  --fs-h1:       68px;
+  --fs-display:  90px;
+}
+
+/* Ajustes adicionales para texto grande */
+html.a11y-text-lg .page {
+  padding-left: max(var(--page-pad-x), 48px);
+  padding-right: max(var(--page-pad-x), 48px);
+}
+
+/* ── Modo daltónico ─────────────────────────────────────────── */
+/* Clase: a11y-daltonismo                                        */
+/* Reemplaza verde (inaccesible para deuteranopia/protanopia)    */
+/* con azul, y rojo con magenta/púrpura distinguible por todos   */
+
+html.a11y-daltonismo {
+  /* OK: azul en lugar de verde */
+  --ok:        #0055A5;
+  --ok-bg:     #E3EFFF;
+  --ok-border: #90BFEF;
+
+  /* Warn: naranja (seguro para todos los tipos de daltonismo) */
+  --warn:        #C25E00;
+  --warn-bg:     #FFF3E0;
+  --warn-border: #FFCC80;
+
+  /* Error: magenta/púrpura (distinguible incluso sin ver rojo) */
+  --err:        #8A0070;
+  --err-bg:     #FCE4F7;
+  --err-border: #E8A8D8;
+
+  /* Acento secundario: naranja en lugar de rojo */
+  --secondary:       #C25E00;
+  --secondary-soft:  #E07A1A;
+  --secondary-bg:    #FFF3E0;
+}
+
+/* ── Alto contraste ─────────────────────────────────────────── */
+/* Clase: a11y-contraste                                          */
+/* Máximo contraste entre texto y fondo, bordes más marcados     */
+
+html.a11y-contraste {
+  --paper:        #FFFFFF;
+  --paper-2:      #F0F0F0;
+  --paper-3:      #E0E0E0;
+
+  --ink:          #000000;
+  --ink-2:        #111111;
+  --muted:        #333333;
+  --muted-2:      #555555;
+
+  --rule:         #888888;
+  --rule-2:       #666666;
+  --rule-strong:  #000000;
+
+  --accent:       #003FA3;
+  --accent-soft:  #0050CC;
+  --accent-bg:    #CCE0FF;
+
+  --ok:           #004D00;
+  --ok-bg:        #CCFFCC;
+  --ok-border:    #004D00;
+
+  --warn:         #7A4A00;
+  --warn-bg:      #FFF0B3;
+  --warn-border:  #7A4A00;
+
+  --err:          #AA0000;
+  --err-bg:       #FFCCCC;
+  --err-border:   #AA0000;
+}
+
+/* Bordes más gruesos en alto contraste */
+html.a11y-contraste .page {
+  outline: none;
+}
+
+/* ── Combinación: daltónico + alto contraste ────────────────── */
+
+html.a11y-daltonismo.a11y-contraste {
+  --ok:        #003A7A;
+  --ok-bg:     #CCE4FF;
+  --ok-border: #003A7A;
+
+  --err:        #660055;
+  --err-bg:     #F9CCEF;
+  --err-border: #660055;
+}
