@@ -1,63 +1,68 @@
 /* ─────────────────────────────────────────────────────────────
    TrazaPREP · Design tokens
-   Cívico contemporáneo — papel, tinta cálida, sienna mexicana
+   Moderno institucional — azul cívico, rojo electoral, blanco limpio
    ───────────────────────────────────────────────────────────── */
 
 :root {
   /* ── Color · superficies ───────────────────────────── */
-  --paper:        #F5F1E8;   /* fondo principal — papel cálido */
-  --paper-2:      #EDE7D8;   /* hover de filas, surfaces sutiles */
-  --paper-3:      #E5DCC6;   /* énfasis cálido */
+  --paper:        #FFFFFF;   /* fondo principal — blanco limpio */
+  --paper-2:      #F2F5FA;   /* hover de filas, surfaces sutiles */
+  --paper-3:      #E4EBF5;   /* énfasis azul muy claro */
 
   /* ── Color · tinta y texto ─────────────────────────── */
-  --ink:          #1A1815;   /* tinta principal (no negro puro) */
-  --ink-2:        #3A352E;   /* texto secundario fuerte */
-  --muted:        #6E665C;   /* texto muted, labels */
-  --muted-2:      #94897B;   /* hints, separadores activos */
+  --ink:          #0B1829;   /* tinta principal — navy profundo */
+  --ink-2:        #2C4058;   /* texto secundario fuerte */
+  --muted:        #5A7087;   /* texto muted, labels */
+  --muted-2:      #8BA1B4;   /* hints, separadores activos */
 
   /* ── Color · reglas y bordes ───────────────────────── */
-  --rule:         #D8CFBC;
-  --rule-2:       #BFB39A;
+  --rule:         #D0DCE8;
+  --rule-2:       #B8CADE;
   --rule-strong:  var(--ink);
 
-  /* ── Color · acento (sienna mexicana) ──────────────── */
-  --accent:       #9E3B23;
-  --accent-soft:  #C56344;
-  --accent-bg:    #F2E1DA;
+  /* ── Color · acento principal (azul institucional) ─── */
+  --accent:       #1B5FCC;
+  --accent-soft:  #4480E0;
+  --accent-bg:    #EBF2FF;
 
-  /* ── Color · estados (apagados, no candy) ──────────── */
-  --ok:           #4A6B47;
-  --ok-bg:        #E2E5D6;
-  --ok-border:    #C5CBA8;
+  /* ── Color · acento secundario (rojo electoral) ────── */
+  --secondary:       #C8321B;
+  --secondary-soft:  #E05540;
+  --secondary-bg:    #FCEEED;
 
-  --warn:         #A37528;
-  --warn-bg:      #F0E5C9;
-  --warn-border:  #DCCB9C;
+  /* ── Color · estados ───────────────────────────────── */
+  --ok:           #1A7A4A;
+  --ok-bg:        #E4F7ED;
+  --ok-border:    #9FDDBC;
 
-  --err:          #8B3A2F;
-  --err-bg:       #E9D6CE;
-  --err-border:   #D8B7A8;
+  --warn:         #9B6E00;
+  --warn-bg:      #FFF8E6;
+  --warn-border:  #F5D87A;
+
+  --err:          #C0241A;
+  --err-bg:       #FDECED;
+  --err-border:   #F5A9A5;
 
   /* ── Tipografía ────────────────────────────────────── */
-  --font-serif:   "Fraunces", "Iowan Old Style", Georgia, serif;
-  --font-sans:    "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif:   "DM Serif Display", Georgia, serif;
+  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono:    "IBM Plex Mono", "JetBrains Mono", "SF Mono", Menlo, monospace;
 
   /* ── Tipografía · escala ───────────────────────────── */
-  --fs-eyebrow:   11px;     /* mono, uppercase, tracked */
-  --fs-meta:      13px;
-  --fs-body-sm:   14px;
-  --fs-body:      16px;
-  --fs-lead:      19px;
-  --fs-h3:        22px;
-  --fs-h2:        28px;
-  --fs-h1:        54px;
-  --fs-display:   72px;     /* stats grandes */
+  --fs-eyebrow:   12px;
+  --fs-meta:      14px;
+  --fs-body-sm:   15px;
+  --fs-body:      17px;
+  --fs-lead:      20px;
+  --fs-h3:        24px;
+  --fs-h2:        32px;
+  --fs-h1:        60px;
+  --fs-display:   80px;
 
   /* ── Tracking ──────────────────────────────────────── */
-  --track-eyebrow: 0.14em;
-  --track-meta:    0.08em;
-  --track-display: -0.025em;
+  --track-eyebrow: 0.12em;
+  --track-meta:    0.06em;
+  --track-display: -0.03em;
 
   /* ── Espaciado ─────────────────────────────────────── */
   --space-1:  4px;
@@ -70,8 +75,8 @@
   --space-8:  64px;
 
   /* ── Layout ────────────────────────────────────────── */
-  --page-max:     1180px;
-  --page-pad-x:   56px;
+  --page-max:      1180px;
+  --page-pad-x:    56px;
   --page-pad-x-sm: 24px;
 
   /* ── Transiciones ──────────────────────────────────── */

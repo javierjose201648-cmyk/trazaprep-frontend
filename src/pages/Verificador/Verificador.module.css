@@ -10,8 +10,6 @@
 
 .headline {
   font-family: var(--font-serif);
-  font-optical-sizing: auto;
-  font-variation-settings: "opsz" 96;
   font-weight: 400;
   font-size: var(--fs-h1);
   line-height: 1.04;
@@ -22,14 +20,12 @@
 .headline em {
   font-style: italic;
   color: var(--accent);
-  font-weight: 400;
 }
 
 .lead {
-  font-family: var(--font-serif);
-  font-variation-settings: "opsz" 14;
+  font-family: var(--font-sans);
   font-size: var(--fs-lead);
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--ink-2);
   align-self: end;
 }
@@ -48,36 +44,42 @@
 .campoGrupo {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .campoLabel {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--fs-eyebrow);
+  font-weight: 700;
   letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
 }
 
 .campoFila {
   display: flex;
   align-items: center;
   gap: 12px;
-  border-bottom: 1px solid var(--rule-strong);
+  border-bottom: 2px solid var(--rule);
   padding-bottom: 12px;
+  transition: border-color var(--t-fast);
+}
+
+.campoFila:focus-within {
+  border-bottom-color: var(--accent);
 }
 
 .flecha {
   font-family: var(--font-mono);
-  font-size: 18px;
-  color: var(--muted-2);
+  font-size: 20px;
+  color: var(--accent);
   user-select: none;
 }
 
 .claveInput {
   flex: 1;
   font-family: var(--font-mono);
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 500;
   letter-spacing: 0.05em;
   color: var(--ink);
@@ -100,36 +102,37 @@
 /* ── Zona drag-and-drop ─────────────────────────────────────── */
 
 .zona {
-  border: 1px dashed var(--rule-2);
-  padding: 48px 32px;
+  border: 2px dashed var(--rule-2);
+  border-radius: 8px;
+  padding: 52px 36px;
   cursor: pointer;
   transition: border-color var(--t-base), background var(--t-base);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 140px;
+  min-height: 160px;
 }
 
 .zona:hover:not(.zonaCompleta) {
-  border-color: var(--rule-strong);
-  background: var(--paper-2);
+  border-color: var(--accent);
+  background: var(--accent-bg);
 }
 
 .zonaActiva {
-  border: 1px solid var(--accent) !important;
+  border: 2px solid var(--accent) !important;
   background: var(--accent-bg) !important;
   cursor: copy;
 }
 
 .zonaCompleta {
-  border: 1px solid var(--rule);
+  border: 2px solid var(--rule);
+  border-radius: 8px;
   background: var(--paper-2);
   cursor: default;
 }
 
-/* permite cambiar archivo desde zona completa */
 .zonaCompleta:hover {
-  border-color: var(--rule-2);
+  border-color: var(--accent-soft);
 }
 
 .inputOculto {
@@ -140,7 +143,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   text-align: center;
   pointer-events: none;
 }
@@ -148,20 +151,20 @@
 .zonaTextoFila {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   pointer-events: none;
 }
 
 .zonaInstruccion {
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-family: var(--font-sans);
   font-size: var(--fs-lead);
+  font-weight: 500;
   color: var(--ink-2);
 }
 
 .zonaSecundario {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: var(--fs-body-sm);
   color: var(--muted);
 }
 
@@ -177,7 +180,7 @@
 
 .archivoNombre {
   font-family: var(--font-mono);
-  font-size: 15px;
+  font-size: var(--fs-body);
   font-weight: 500;
   color: var(--ink);
   word-break: break-all;
@@ -185,14 +188,15 @@
 
 .archivoTamano {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--fs-meta);
   color: var(--muted);
   white-space: nowrap;
 }
 
 .archivoAccion {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--fs-eyebrow);
+  font-weight: 700;
   letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--accent);
@@ -202,18 +206,20 @@
 
 .hashBloque {
   border: 1px solid var(--rule);
-  padding: 20px 24px;
+  border-radius: 6px;
+  padding: 22px 28px;
   background: var(--paper-2);
 }
 
 .hashEyebrow {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--fs-eyebrow);
+  font-weight: 700;
   letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 10px;
+  color: var(--accent);
+  margin-bottom: 12px;
 }
 
 .hashFila {
@@ -227,13 +233,14 @@
   font-size: var(--fs-body-sm);
   color: var(--ink);
   word-break: break-all;
-  line-height: 1.5;
+  line-height: 1.6;
   flex: 1;
 }
 
 .copiarBtn {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--fs-eyebrow);
+  font-weight: 700;
   letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--accent);
@@ -259,20 +266,21 @@
 }
 
 .verificarBtn {
-  font-family: var(--font-mono);
-  font-size: var(--fs-eyebrow);
-  letter-spacing: var(--track-eyebrow);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--paper);
-  background: var(--ink);
+  color: #fff;
+  background: var(--accent);
   border: none;
-  padding: 16px 32px;
+  padding: 18px 36px;
   cursor: pointer;
-  border-radius: 2px;
-  transition: opacity var(--t-fast);
+  border-radius: 4px;
+  transition: background var(--t-fast), opacity var(--t-fast);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .verificarBtn:disabled {
@@ -281,11 +289,11 @@
 }
 
 .verificarBtn:not(:disabled):hover {
-  opacity: 0.82;
+  background: var(--accent-soft);
 }
 
 .avisoFila {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-style: italic;
   font-size: var(--fs-body-sm);
   color: var(--muted);
@@ -296,9 +304,9 @@
 
 .loadingDot {
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: var(--accent);
+  width: 10px;
+  height: 10px;
+  background: currentColor;
   border-radius: 50%;
   animation: pulse 1.4s ease-in-out infinite;
   flex-shrink: 0;
@@ -314,7 +322,8 @@
 .resultadoCoincide,
 .resultadoNoCoincide {
   border: 1px solid;
-  padding: 36px 40px;
+  border-radius: 8px;
+  padding: 40px 48px;
   margin-bottom: 48px;
   display: flex;
   align-items: flex-start;
@@ -339,26 +348,27 @@
 
 .resultadoEyebrow {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--fs-eyebrow);
+  font-weight: 700;
   letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .resultadoMensaje {
-  font-family: var(--font-serif);
-  font-variation-settings: "opsz" 14;
+  font-family: var(--font-sans);
   font-size: var(--fs-lead);
+  font-weight: 500;
   line-height: 1.5;
   color: var(--ink);
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
 .resultadoTimestamp {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--fs-meta);
   color: var(--muted);
   margin: 0;
 }
@@ -367,8 +377,9 @@
 
 .errorBloque {
   border: 1px solid var(--err-border);
+  border-radius: 8px;
   background: var(--err-bg);
-  padding: 24px 28px;
+  padding: 28px 36px;
   margin-bottom: 48px;
   display: flex;
   align-items: flex-start;
@@ -377,8 +388,9 @@
 }
 
 .errorLabel {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--fs-eyebrow);
+  font-weight: 700;
   letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--err);
@@ -387,9 +399,8 @@
 }
 
 .errorMensaje {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 15px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
   color: var(--ink-2);
   flex: 1;
   margin: 0;
@@ -398,8 +409,9 @@
 /* ── Reiniciar ──────────────────────────────────────────────── */
 
 .reiniciarBtn {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--fs-eyebrow);
+  font-weight: 700;
   letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--accent);
@@ -426,7 +438,7 @@
   }
 
   .headline {
-    font-size: 40px;
+    font-size: 44px;
   }
 
   .formulario {
@@ -435,12 +447,12 @@
   }
 
   .zona {
-    padding: 36px 24px;
-    min-height: 120px;
+    padding: 40px 24px;
+    min-height: 130px;
   }
 
   .hashBloque {
-    padding: 16px 20px;
+    padding: 18px 22px;
   }
 
   .accion {
@@ -451,26 +463,26 @@
 
   .resultadoCoincide,
   .resultadoNoCoincide {
-    padding: 24px;
+    padding: 28px;
     flex-direction: column;
     gap: 20px;
   }
 
   .errorBloque {
-    padding: 20px 24px;
+    padding: 22px 28px;
   }
 }
 
 @media (max-width: 600px) {
   .headline {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .claveInput {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .hashValor {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
